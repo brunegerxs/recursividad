@@ -26,4 +26,22 @@ def factorial_iterativo(n: int) -> int:
     resultado = 1
     for i in range(1, n + 1):
         resultado *= i
-    return resultado
+    return resultado'''
+
+
+
+
+####  2. Enfoque Recursivo
+Ejemplo clásico de una función que se llama a sí misma reduciendo el problema hasta llegar a un caso base.
+
+Python
+def factorial_recursivo(n: int) -> int:
+    if n < 0:
+        raise ValueError("El factorial no está definido para números negativos.")
+    
+    # Caso base
+    if n == 0 or n == 1:
+        return 1
+    
+    # Caso recursivo
+    return n * factorial_recursivo(n - 1)
