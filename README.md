@@ -12,13 +12,11 @@ En programación, el factorial es el ejemplo fundamental para entender conceptos
 * `0! = 1` *(por definición)*
 
 ---
+###🛠️ Implementación en Código (Python)
+1. Enfoque Iterativo (Bucle)
+Ideal para optimizar el rendimiento y evitar consumo excesivo de la pila de llamadas (call stack).
 
-### 🛠️ Implementación en Código (Python)
-
-#### 1. Enfoque Iterativo (Bucle)
-Ideal para optimizar el rendimiento y evitar consumo excesivo de la pila de llamadas (*call stack*).
-
-```python
+Python
 def factorial_iterativo(n: int) -> int:
     if n < 0:
         raise ValueError("El factorial no está definido para números negativos.")
@@ -26,22 +24,16 @@ def factorial_iterativo(n: int) -> int:
     resultado = 1
     for i in range(1, n + 1):
         resultado *= i
-    return resultado'''
-
-
-
-
-####  2. Enfoque Recursivo
-Ejemplo clásico de una función que se llama a sí misma reduciendo el problema hasta llegar a un caso base.
-
-Python
-def factorial_recursivo(n: int) -> int:
+    return resultado            
+###2. Enfoque Recursivo (Llamada a sí misma)Aplica la regla $n! = n \times (n - 1)!$ hasta alcanzar la condición de parada o caso base.Pythondef factorial_recursivo(n: int) -> int:
     if n < 0:
         raise ValueError("El factorial no está definido para números negativos.")
     
-    # Caso base
+    # Caso base: interrumpe la recursión
     if n == 0 or n == 1:
         return 1
     
-    # Caso recursivo
-    return n * factorial_recursivo(n - 1)
+    # Caso recursivo: se llama a sí misma reduciendo el problema
+    return n * factorial_recursivo(n - 1)    
+        
+    
